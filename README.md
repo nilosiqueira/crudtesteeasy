@@ -1,2 +1,2 @@
 # crudtesteeasy
-crud utilizando javascript com node js express React js
+crud utilizando javascript com node js express React js Mongoose
