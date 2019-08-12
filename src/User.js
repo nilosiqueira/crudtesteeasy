@@ -8,3 +8,5 @@ const UserSchema = new mongoose.Schema({
     number: String
   }
 });
+
+module.exports = mongoose.model("User", UserSchema);

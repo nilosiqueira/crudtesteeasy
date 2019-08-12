@@ -1,6 +1,8 @@
 const express = require("express");
 
 const cors = require("cors");
+const mongoose = require("mongoose");
+const User = require("./User");
 
 const app = express();
 
@@ -8,9 +10,12 @@ app.use(express.json());
 
 app.use(cors());
 
-mongoose.connect("mongodb:", {
-  userNewUrlParser: true
-});
+mongoose.connect(
+  "mongodb://crudeasy:teste123@ds261077.mlab.com:61077/crudeasy",
+  {
+    useNewUrlParser: true
+  }
+);
 
 // Rotas
 app.get("/users", async (req, res) => {
@@ -19,7 +24,7 @@ app.get("/users", async (req, res) => {
 });
 
 app.get("/users/:id", async (req, res) => {
-  const user = await User.findById(req.params.id);
+  const users = await User.findById(req.params.id);
   return res.json(users);
 });
 
